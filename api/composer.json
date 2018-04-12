@@ -14,6 +14,7 @@
         "phpdocumentor/reflection-docblock": "^3.0 || ^4.0",
         "symfony/asset": "^3.0 || ^4.0",
         "symfony/console": "^4.0",
+        "symfony/debug-pack": "^1.0",
         "symfony/expression-language": "^3.0 || ^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
@@ -21,7 +22,8 @@
         "symfony/security-bundle": "^3.0 || ^4.0",
         "symfony/twig-bundle": "^3.0 || ^4.0",
         "symfony/validator": "^3.0 || ^4.0",
-        "symfony/yaml": "^4.0"
+        "symfony/yaml": "^4.0",
+        "webonyx/graphql-php": "^0.11.5"
     },
     "require-dev": {
         "api-platform/schema-generator": "^2.1"

@@ -12,8 +12,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * This is a dummy entity. Remove it!
  *
- * @ApiResource
- *
  * @ORM\Entity
  */
 class Gerard
@@ -39,14 +37,12 @@ class Gerard
      * @var string A nice person
      *
      * @ORM\ManyToMany(targetEntity="Greeting")
-     * @ApiFilter(SearchFilter::class, strategy="exact")
      */
     public $greetings;
     /**
      * @var string A nice person
      *
      * @ORM\ManyToMany(targetEntity="Hello")
-     * @ApiFilter(SearchFilter::class, strategy="exact")
      */
     public $hellos;
 
