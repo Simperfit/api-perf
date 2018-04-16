@@ -1,0 +1,27 @@
+version: '3.2'
+
+services:
+  php:
+    build:
+      dockerfile: Dockerfile.blackfire
+      context: ./api
+      cache_from:
+        - ${CONTAINER_REGISTRY_BASE}/php
+    depends_on:
+      - db
+    env_file:
+      - ./api/.env
+    # Comment out these volumes in production
+    volumes:
+      - ./api:/srv/api:rw,cached
+      # If you develop on Linux, uncomment the following line to use a bind-mounted host directory instead
+      # - ./api/var:/srv/api/var:rw
+  blackfire:
+    image: blackfire/blackfire
+    environment:
+        # Exposes the host BLACKFIRE_SERVER_ID and TOKEN environment variables.
+        - BLACKFIRE_SERVER_ID
+        - BLACKFIRE_SERVER_TOKEN
+        # You can also use global environment credentials :
+        # BLACKFIRE_SERVER_ID: SERVER-ID
+        # BLACKFIRE_SERVER_TOKEN: SERVER-TOKEN
